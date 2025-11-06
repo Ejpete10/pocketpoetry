@@ -1,0 +1,62 @@
+site_name: Undergraduate Student Government Polytechnic
+#site_url: https://usgpolytechnic.github.io/USG-Polytechnic/
+#repo_url: https://github.com/USGPolytechnic/USG-Polytechnic
+#edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  custom_dir: custom_theme/
+  palette:
+    primary: red     # fallback close to ASU Maroon
+    accent: amber    # fallback close to ASU Gold
+  font:
+    text: "Lato"
+    code: "Fira Code"
+  logo: logo.png
+  favicon: logo.png
+
+extra:
+  generator: false
+  hide:
+    - toc   # removes right-hand Table of Contents
+  features:
+    - navigation.sections
+    - navigation.tabs.sticky
+    - navigation.path
+    - navigation.indexes
+    - navigation.prune
+    #- toc.follow
+    - navigation.footer
+    - content.action.edit
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - footnotes
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+draft_docs: |
+  **/*_unpublished.md
+  **/*_draft.md
+  **/*_draft**
+
+plugins:
+  - search
+  - glightbox
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/asu.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
